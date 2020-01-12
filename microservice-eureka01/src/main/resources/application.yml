@@ -1,0 +1,15 @@
+server:
+  port: 7201
+eureka:
+  instance: eureka01
+  client:
+    # false 不向注册中心注册自己
+    register-with-eureka: false
+    # false 自己端就是注册中心，职责维护服务实例，并不需要去检索服务
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka02:7202/eureka/
+  server:
+    eviction-interval-timer-in-ms: 3000
+    enable-self-preservation: false
+
