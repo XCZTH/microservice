@@ -1,0 +1,27 @@
+server:
+  port: 8202
+
+spring:
+  application:
+    name: microservice-plate # 对外暴露的服务名称
+  datasource: # 数据库配置
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/microservice?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true
+    username: root
+    password: 123456
+    hikari:
+      maximum-pool-size: 10 # 最大连接池数
+      max-lifetime: 1770000
+
+# 客户端注册到eureka服务列表
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka01:7201/eureka/,http://eureka02:7202/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    instance-id: 车牌识别服务-8202
+    prefer-ip-address: true # 访问路径可显示IP地址
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 5

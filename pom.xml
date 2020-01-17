@@ -19,6 +19,7 @@
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+        <mysql.version>8.0.18</mysql.version>
         <mybatis-plus.version>3.0.7.1</mybatis-plus.version>
     </properties>
 
@@ -60,6 +61,7 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
             </dependency>
 
             <!-- mybatis plus -->
@@ -91,9 +93,11 @@
 
     <modules>
         <module>microservice-eureka01</module>
-        <module>microservice.eureka02</module>
         <module>microservice-eureka02</module>
         <module>microservice-plate-provider01</module>
+        <module>microservice-plate-provider02</module>
+        <module>microservice-plate-consumer</module>
+        <module>microservice-plate-consumer-feign</module>
     </modules>
 
 </project>

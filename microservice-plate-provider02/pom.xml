@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>microservice-plate-provider01</artifactId>
+    <artifactId>microservice-plate-provider02</artifactId>
 
     <dependencies>
         <!-- spring boot web 依赖 -->
@@ -51,6 +51,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>

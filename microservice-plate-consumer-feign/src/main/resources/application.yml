@@ -1,0 +1,20 @@
+server:
+  port: 9201
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka01:7201/eureka/,http://eureka02:7202/eureka/
+  instance:
+    instance-id: 消费方服务-9209
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 5
+spring:
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+  application:
+    name: ribbon-client
