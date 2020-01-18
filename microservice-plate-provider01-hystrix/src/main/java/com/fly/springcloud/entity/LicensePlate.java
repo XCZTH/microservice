@@ -1,5 +1,6 @@
 package com.fly.springcloud.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -9,6 +10,8 @@ import lombok.experimental.Accessors;
 @Data
 @Accessors(chain = true)
 public class LicensePlate {
+
+    @TableId
     private Long id;
 
     private String number;

@@ -1,8 +1,9 @@
-package com.fly.springcloud.service;
+package com.fly.springcloud.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fly.springcloud.entity.LicensePlate;
 import com.fly.springcloud.mapper.LicensePlateMapper;
+import com.fly.springcloud.service.ILicensePlateService;
 import org.springframework.stereotype.Service;
 
 /**

@@ -1,12 +1,12 @@
 server:
-  port: 8202
+  port: 8201
 
 spring:
   application:
     name: microservice-plate
   datasource: # 数据库配置
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/microservice2?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true
+    url: jdbc:mysql://localhost:3306/microservice?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true
     username: root
     password: 123456
     hikari:
@@ -21,7 +21,7 @@ eureka:
     healthcheck:
       enabled: true
   instance:
-    instance-id: 车牌识别服务-8202
+    instance-id: 车牌识别服务-hystrix-8201
     prefer-ip-address: true # 访问路径可显示IP地址
     lease-renewal-interval-in-seconds: 2
     lease-expiration-duration-in-seconds: 5
@@ -48,11 +48,3 @@ mybatis-plus:
     use-generated-keys: true
     default-statement-timeout: 60
     default-fetch-size: 100
-
-# 配置hystrix dashboard的url访问
-# 开启指标流端点
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream

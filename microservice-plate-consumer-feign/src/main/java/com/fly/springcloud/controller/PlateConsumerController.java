@@ -1,7 +1,7 @@
 package com.fly.springcloud.controller;
 
 import com.fly.springcloud.entity.LicensePlate;
-import com.fly.springcloud.service.PlateClientService;
+import com.fly.springcloud.service.LicensePlateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +18,7 @@ import java.util.List;
 public class PlateConsumerController {
 
     @Autowired
-    PlateClientService plateClientService;
+    LicensePlateService plateClientService;
 
     @GetMapping("/{id}")
     LicensePlate get(@PathVariable Long id) {

@@ -1,6 +1,5 @@
 package com.fly.springcloud.controller;
 
-import com.baomidou.mybatisplus.extension.api.R;
 import com.fly.springcloud.entity.LicensePlate;
 import com.fly.springcloud.service.ILicensePlateService;
 import com.netflix.appinfo.InstanceInfo;
@@ -32,19 +31,22 @@ public class PlateProviderController {
     @Resource
     private EurekaClient client;
 
-
     @GetMapping("/{id}")
-    @HystrixCommand
+    @HystrixCommand(fallbackMethod = "processGetPlateHystrix")
     public LicensePlate get(@PathVariable("id") Long id) {
         LicensePlate plate = iLicensePlateService.getById(id);
-        if(plate==null){
-            throw new RuntimeException("数据不存在");
+        if (plate == null) {
+            throw new RuntimeException("数据库没有对应信息");
+        } else {
+            return plate;
         }
-        return plate;
+    }
+
+    public LicensePlate processGetPlateHystrix(@PathVariable Long id) {
+        return new LicensePlate().setId(id).setColor("").setBriefCase("未找到该ID的结果");
     }
 
     @GetMapping("/list")
-    @HystrixCommand
     public List<LicensePlate> list() {
         List<LicensePlate> list = iLicensePlateService.list();
         return list;

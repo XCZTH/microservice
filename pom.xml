@@ -98,6 +98,10 @@
         <module>microservice-plate-provider02</module>
         <module>microservice-plate-consumer</module>
         <module>microservice-plate-consumer-feign</module>
+        <module>microservice-plate-provider01-hystrix</module>
+        <module>microservice-plate-consumer-hystrix-dashboard</module>
+        <module>microservice-zuul-gateway</module>
+        <module>microservice-config</module>
     </modules>
 
 </project>

@@ -13,8 +13,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 @MapperScan("com.fly.springcloud.mapper")
 @EnableCircuitBreaker
-public class PlateProvider02 {
+public class PlateProvider01Hystrix {
     public static void main(String[] args) {
-        SpringApplication.run(PlateProvider02.class, args);
+        SpringApplication.run(PlateProvider01Hystrix.class, args);
     }
 }

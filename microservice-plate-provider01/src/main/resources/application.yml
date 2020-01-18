@@ -48,3 +48,11 @@ mybatis-plus:
     use-generated-keys: true
     default-statement-timeout: 60
     default-fetch-size: 100
+
+# 配置hystrix dashboard的url访问
+# 开启指标流端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
